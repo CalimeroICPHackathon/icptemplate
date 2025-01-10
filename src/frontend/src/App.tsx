@@ -1,11 +1,21 @@
-function App() {
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import HomePage from './pages/home';
+import SetupPage from './pages/setup';
+import Authenticate from './pages/login/Authenticate';
+import { AccessTokenWrapper } from '@calimero-network/calimero-client';
+import { getNodeUrl } from './utils/node';
+
+export default function App() {
   return (
-    <div className="flex justify-center">
-      <h1 className="font-bold text-2xl text-blue-900">
-        React(v18) , Typescript , Tailwind CSS , Vite
-      </h1>
-    </div>
+    <AccessTokenWrapper getNodeUrl={getNodeUrl}>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<SetupPage />} />
+          <Route path="/auth" element={<Authenticate />} />
+          <Route path="/home" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
+    </AccessTokenWrapper>
   );
 }
-
-export default App;
