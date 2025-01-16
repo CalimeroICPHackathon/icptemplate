@@ -1,7 +1,12 @@
+import withTM from 'next-transpile-modules';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  distDir: "build",
+  reactStrictMode: true,
+  output: 'export',
+  images: {
+    unoptimized: true, // This is needed because GitHub Pages does not support Next.js optimized images
+  },
 };
 
-export default nextConfig;
+export default withTM(['@calimero-is-near/calimero-p2p-sdk'])(nextConfig);

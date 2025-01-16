@@ -3,10 +3,6 @@
   "version": "0.2.1",
   "license": "MIT",
   "author": "Adrián Darío Hidalgo Flores",
-  "workspaces": [
-    "backend",
-    "frontend"
-  ],
   "keywords": [
     "azle",
     "dapps",
@@ -22,12 +18,25 @@
     "typescript"
   ],
   "scripts": {
-    "build": "turbo run build",
+    "build": "cd frontend &&  npm run build",
     "preclean": "dfx stop && turbo run clean",
     "clean": "rm -rf .azle && rm -rf .dfx && rm -rf .turbo && rm -rf node_modules"
   },
+  "dependencies": {
+    "azle": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs": "0.0.1-security",
+    "reflect-metadata": "^0.2.2",
+    "sql.js": "^1.10.3",
+    "typeorm": "^0.3.20"
+  },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.12",
+    "@types/sql.js": "^1.4.9",
     "prettier": "^3.2.5",
     "turbo": "^1.13.3"
   }

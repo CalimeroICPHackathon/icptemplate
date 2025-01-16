@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "dfx": "0.19.0",
+  "dfx": "0.20.0",
   "canisters": {
     "backend": {
       "type": "custom",
@@ -10,7 +10,6 @@
       "build": "npx azle backend",
       "wasm": ".azle/backend/backend.wasm",
       "gzip": true,
-      "assets": [["backend/database/migrations", "migrations"]],
       "metadata": [
         {
           "name": "candid:service",
@@ -26,9 +25,9 @@
       "type": "assets",
       "dependencies": ["backend"],
       "frontend": {
-        "entrypoint": "frontend/build/index.html"
+        "entrypoint": "frontend/out/index.html"
       },
-      "source": ["frontend/build"]
+      "source": ["frontend/out"]
     },
     "internet-identity": {
       "type": "custom",
