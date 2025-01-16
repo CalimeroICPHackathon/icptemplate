@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router.js';
+import { useRouter } from 'next/router';
 import { getAppEndpointKey } from '../../utils/storage';
 import { getStorageApplicationId } from '../../utils/node';
 import {

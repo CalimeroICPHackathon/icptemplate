@@ -1,12 +1,16 @@
 {
   "name": "backend",
+  "main": "src/index.ts",
   "scripts": {
+    "compile": "tsc && node ./build/index.js",
+    "start": "nodemon -e ts --exec \"npm run compile\"",
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
+  "type": "module",
   "dependencies": {
     "azle": "^0.21.1",
     "cors": "^2.8.5",
-    "express": "^4.19.2",
+    "express": "^4.21.2",
     "reflect-metadata": "^0.2.2",
     "sql.js": "^1.10.3",
     "typeorm": "^0.3.20"

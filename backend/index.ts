@@ -1,23 +1,27 @@
-import express, { Request } from 'express';
+import express, { Request } from "express";
 
 let db = {
-    hello: ''
+  hello: "",
 };
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/db', (_req, res) => {
-    res.json(db);
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
-app.post('/db/update', (req: Request<any, any, typeof db>, res) => {
-    db = req.body;
-
-    res.json(db);
+app.get("/db", (_req, res) => {
+  res.json(db);
 });
 
-app.use(express.static('/dist'));
+app.post("/db/update", (req: Request<any, any, typeof db>, res) => {
+  db = req.body;
 
-app.listen();
+  res.json(db);
+});
+
+app.use(express.static("/dist"));
+
+app.listen(4000);

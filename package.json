@@ -18,6 +18,7 @@
     "typescript"
   ],
   "scripts": {
+    "dev": "cd backend node index.ts",
     "build": "cd frontend &&  npm run build",
     "preclean": "dfx stop && turbo run clean",
     "clean": "rm -rf .azle && rm -rf .dfx && rm -rf .turbo && rm -rf node_modules"
